@@ -117,19 +117,19 @@ $result=mysqli_query($con,$sql);
           <label for="exampleInputClasss">Gender</label>
           
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male">
+            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male">
             <label class="form-check-label" for="exampleRadios1">
               Male
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female">
+            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female" check = <?php echo $gender ?>>
             <label class="form-check-label" for="exampleRadios2">
               Female
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="Other" >
+            <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="Other" check = <?php echo $gender ?>>
             <label class="form-check-label" for="exampleRadios3">
               Other
             </label>

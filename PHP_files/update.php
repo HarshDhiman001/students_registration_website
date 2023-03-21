@@ -31,17 +31,9 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   include 'else.php';
   include '../database/data.php';
   $id=$_GET['updateid'];
-  $sql = "SELECT * FROM `data`";
-  $result=mysqli_query($con,$sql);
-  $row=mysqli_fetch_assoc($result);
-  $name = $row['name'];
-  $email = $row['email'];
-  $contact = $row['contact'];
-  $address = $row['address'];
-  $class = $row['class'];
-  $gender = $row['gender'];
-  $sql="UPDATE`data`SET`name`='$name',`email`='$email',`contact`='$contact',`address`='$address',`class`='$class',`gender`='gender'
+  $sql="UPDATE`data`SET`name`='$name',`email`='$email',`contact`='$contact',`address`='$address',`class`='$class',`gender`='$gender'
   WHERE `data`.`id` = $id";
+  $result=mysqli_query($con,$sql);
 if($result)
 {
   echo "updated successfully";
@@ -72,42 +64,42 @@ if($result)
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
           <input type="email" class="form-control" id="exampleInputEmail1" 
-          aria-describedby="emailHelp" name="email">
+          aria-describedby="emailHelp" name="email" value = <?php echo $email; ?>>
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
           <label for="exampleInputContact">Contact</label>
           <input type="tel" class="form-control" id="exampleInputEmail1" 
-          aria-describedby="emailHelp" name="contact">
+          aria-describedby="emailHelp" name="contact" value = <?php echo $contact; ?>>
         </div>
         <div class="form-group">
           <label for="exampleInputAddress">Address</label>
           <input type="address" class="form-control" id="exampleInputEmail1" 
-          aria-describedby="emailHelp" name="address">
+          aria-describedby="emailHelp" name="address" value = <?php echo $address; ?>>
         </div>
         <div class="form-group">
         <label for="exampleInputClasss">Class</label>
         <input type="number" class="form-control" id="exampleInputEmail1" 
-        aria-describedby="emailHelp" name="class" max="12" min="1">
+        aria-describedby="emailHelp" name="class" max="12" min="1" value = <?php echo $class; ?>>
         </div>
         <!-- gender -->
         <div class="form-group">
           <label for="exampleInputClasss">Gender</label>
           
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male">
+            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" value = <?php echo $gender; ?>>
             <label class="form-check-label" for="exampleRadios1">
               Male
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female">
+            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female" value = <?php echo $gender; ?>>
             <label class="form-check-label" for="exampleRadios2">
               Female
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="Other" >
+            <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="Other" value = <?php echo $gender; ?> >
             <label class="form-check-label" for="exampleRadios3">
               Other
             </label>

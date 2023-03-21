@@ -30,8 +30,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   else{
   include 'else.php';
   include '../database/data.php';
-$id=$_GET['updateid'];
-$sql = "SELECT * FROM `data`";
+  $id=$_GET['updateid'];
+  $sql = "SELECT * FROM `data`";
   $result=mysqli_query($con,$sql);
   $row=mysqli_fetch_assoc($result);
   $name = $row['name'];

@@ -67,7 +67,7 @@ $result=mysqli_query($con,$sql);
         <td>'.$class.'</td>
         <td>'.$gender.'</td>
         <td>
-    <button class="btn btn-primary" type="submit"><a href="update.php?updateid= '.$id.'">Update</a></button>
+    <button class="btn btn-primary" type="submit"><a href="update.php?updateid='.$id.'">Update</a></button>
     <button class="btn btn-primary" type = "submit"><a href="delete.php?deleteid='.$id.'" >delete</a></button>
 </td>
         </tr>';

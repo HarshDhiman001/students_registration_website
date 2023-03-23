@@ -56,10 +56,10 @@ include 'validation.php';
       <div class="col">
 
       <!-- Form start -->
-      <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" class="stdform">
+      <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])  ?>" class="stdform">
         <div class="form-group">
           <label for="exampleInputName">Name</label>
-          <input type="text" class="form-control" placeholder="Enter Your Name" name="name" maxlength="100" minlength="4">
+          <input type="text" class="form-control" name="name" maxlength="100" minlength="4">
           <span><?php echo $nameErr; ?></span>
         </div>
         <div class="form-group">

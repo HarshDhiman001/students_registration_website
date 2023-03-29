@@ -41,8 +41,6 @@ include  '../database/data.php';
       <th scope="col">operation</th>
     </tr>
   </thead>
-
-
   <tbody>
 <?php
 $sql = "SELECT * FROM `data`";

@@ -56,31 +56,32 @@ include 'validation.php';
       <div class="col">
 
       <!-- Form start -->
-      <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])  ?>" class="stdform">
+      <form  method="post" id="frm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])  ?>" class="stdform">
         <div class="form-group">
-          <label for="exampleInputName">Name</label>
+          <!-- <label for="exampleInputName">Name</label> -->
+          Name
           <input type="text" class="form-control" name="name" maxlength="100" minlength="4">
           <span><?php echo $nameErr; ?></span>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+          <input type="email" class="form-control" id="" aria-describedby="" name="email">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           <span><?php echo $emailErr; ?></span>
         </div>
         <div class="form-group">
           <label for="exampleInputContact">Contact</label>
-          <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="contact">
+          <input type="tel" class="form-control" id="" aria-describedby="" name="contact">
           <span><?php echo $contactErr ?></span>
         </div>
         <div class="form-group">
           <label for="exampleInputAddress">Address</label>
-          <input type="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
+          <input type="address" class="form-control" id="" aria-describedby="" name="address">
           <span><?php echo $addressErr; ?></span>
         </div>
         <div class="form-group">
         <label for="exampleInputClasss">Class</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="class" max="12" min="1">
+        <input type="number" class="form-control" id="" aria-describedby="" name="class" max="12" min="1">
         <span><?php echo $classErr; ?></span>
         </div>
         <!-- gender -->
@@ -137,10 +138,37 @@ include 'validation.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script>
+      jQuery('#frm').validate({
+        rules:
+        {
+          name:"required",
+          email:"required",
+          contact:{
+            required:true,
+            minlength:10,
+            maxlength:10
+          },
+          address:"required",
+          class:"required",
+        },
+        messages:{
+          name:"enter your name",
+          email:"enter your email",
+          contact:{
+            required:"enter your contact details",
+            minlength:"minimum length will we 10",
+            maxlength:"out of bond"
+          },
+          address:"enter your address",
+          class:"enter your class",
+        }
+    })
+    </script>
   </body>
 </html>

@@ -29,11 +29,11 @@ footer {
     background-color: rgb(0, 73, 181);
     color: white;
   }
-  .btn-primary {
+  /* .btn-primary {
     color: white;
     background-color: rgb(0, 0, 163);
     border-color: #0048ff;
-}
+} */
 input.form-control {
     height: 43px;
 }

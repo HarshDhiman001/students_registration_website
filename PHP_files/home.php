@@ -76,7 +76,7 @@ include 'validation.php';
         </div>
         <div class="form-group">
           <label for="exampleInputAddress">Address</label>
-          <input type="address" class="form-control" id="" aria-describedby="" name="address">
+          <input type="text" class="form-control" id="" aria-describedby="" name="address">
           <span><?php echo $addressErr; ?></span>
         </div>
         <div class="form-group">
